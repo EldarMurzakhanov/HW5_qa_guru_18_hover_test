@@ -6,7 +6,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class DragAndDropTest {
 
     @Test
-    void DragAndDropCheck(){
+    void DragAndDropCheck() {
         open("https://the-internet.herokuapp.com/drag_and_drop");
         $("#column-b").$("header").shouldHave(text("B"));
         $("#column-a").dragAndDropTo("#column-b");
@@ -14,11 +14,11 @@ public class DragAndDropTest {
     }
 
     @Test
-    void DragAndDropwithaction(){
+    void DragAndDropWithAction() {
         open("https://the-internet.herokuapp.com/drag_and_drop");
         $("#column-b").$("header").shouldHave(text("B"));
         $("#column-a").hover();
-        actions().clickAndHold().moveByOffset(250,0).release().perform();
+        actions().clickAndHold().moveByOffset(250, 0).release().perform();
         $("#column-b").$("header").shouldHave(text("A"));
 
     }
